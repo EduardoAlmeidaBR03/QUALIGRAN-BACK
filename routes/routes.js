@@ -3,10 +3,10 @@ const express = require("express");
 const router = express.Router();
 //////CONTROLLERS
 const usuarioController = require("../controller/usuarioController");
-const produtoController = require("../controller/produtoController");
+const chapaController = require("../controller/chapaController");
 ////////////////Requisições HTTP Principal /////////////////////
 router.get("/",(req, res) =>{
- return res.json({message: "Sistema de Varejo"});
+ return res.json({message: "Sistema Qualigran"});
 })
 ////////////////Requisições HTTP Usuario /////////////////////
 
@@ -29,9 +29,9 @@ router.post("/login", usuarioController.UsuarioVerificaLogin);
 /////////////////Requisições Produto
 
 //POST - CADASTRAR
-router.post("/add_produtos", produtoController.produtoCreate);
+router.post("/add_chapa", chapaController.ChapaCreate);
 
 //GET - LISTAR
-router.get("/produtos/:id?", produtoController.ProdutoListar);
+router.get("/chapas/:id?", chapaController.ChapaListar);
 
 module.exports = router;
