@@ -16,7 +16,7 @@ const Chapa = database.define('chapa', {
         type: Sequelize.INTEGER,
         allowNull: false
     },
-    arquivo_foto: {
+    link: {
         type: Sequelize.STRING,
         allowNull: false
     },
