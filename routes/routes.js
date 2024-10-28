@@ -36,4 +36,6 @@ router.post("/add_chapa", chapaController.ChapaCreate);
 //GET - LISTAR CHAPAS (com ID opcional)
 router.get("/chapas/:id?", chapaController.ChapaListar);
 
+router.delete("/chapas/delete/:id", chapaController.ChapaDelete);
+
 module.exports = router;
