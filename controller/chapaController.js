@@ -4,15 +4,13 @@ module.exports = class chapaController{
     //CREATE
     static async ChapaCreate(req, res) {
         let nome = req.body.nome;
-        let quantidade = req.body.quantidade;
-        let arquivo_foto = req.body.arquivo_foto;
+        let link = req.body.link;
         let qualidade = req.body.qualidade;
         let preco = req.body.preco;
 
         const chapa = {
             nome: nome,
-            quantidade: quantidade,
-            arquivo_foto: arquivo_foto,
+            link: link,
             qualidade: qualidade,
             preco: preco
         }
@@ -37,15 +35,13 @@ module.exports = class chapaController{
     static async ChapaUpdate(req, res) {
         const id_chapa = req.params.id;
         let nome = req.body.nome;
-        let quantidade = req.body.quantidade;
-        let arquivo_foto = req.body.arquivo_foto;
+        let link = req.body.link;
         let qualidade = req.body.qualidade;
         let preco = req.body.preco;
 
         const chapa = {
             nome: nome,
-            quantidade: quantidade,
-            arquivo_foto: arquivo_foto,
+            link: link,
             qualidade: qualidade,
             preco: preco
         };

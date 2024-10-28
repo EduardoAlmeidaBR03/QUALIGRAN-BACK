@@ -12,10 +12,6 @@ const Chapa = database.define('chapa', {
         type: Sequelize.STRING,
         allowNull: false
     },
-    quantidade: {
-        type: Sequelize.INTEGER,
-        allowNull: false
-    },
     link: {
         type: Sequelize.STRING,
         allowNull: false
