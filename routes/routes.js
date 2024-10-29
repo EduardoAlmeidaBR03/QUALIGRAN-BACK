@@ -5,6 +5,7 @@ const router = express.Router();
 //////CONTROLLERS
 const usuarioController = require("../controller/usuarioController");
 const chapaController = require("../controller/chapaController");
+const tipoChapaController = require("../controller/tipoChapaController");
 
 ////////////////Requisições HTTP Principal /////////////////////
 router.get("/", (req, res) => {
@@ -28,14 +29,25 @@ router.delete("/usuarios/:id", usuarioController.UsuarioDelete);
 // POST - LOGIN (VERIFICAR LOGIN DO USUÁRIO)
 router.post("/login", usuarioController.UsuarioVerificaLogin);
 
-/////////////////Requisições Produto /////////////////////
+/////////////////Requisições De Chapas /////////////////////
 
 //POST - CADASTRAR CHAPA
 router.post("/add_chapa", chapaController.ChapaCreate);
 
 //GET - LISTAR CHAPAS (com ID opcional)
 router.get("/chapas/:id?", chapaController.ChapaListar);
-
+//DELETE  - DELETAR CHAPAS 
 router.delete("/chapas/delete/:id", chapaController.ChapaDelete);
+
+/////////////////Requisições De Tipo de Chapas /////////////////////
+
+
+//POST - CADASTRAR CHAPA
+router.post("/add_tipochapa", tipoChapaController.tipoChapaCreate);
+
+//GET - LISTAR CHAPAS (com ID opcional)
+router.get("/tipochapas/:id?", tipoChapaController.tipoChapaListar);
+//DELETE  - DELETAR CHAPAS 
+router.delete("/tipochapas/delete/:id", tipoChapaController.tipoChapaDelete);
 
 module.exports = router;

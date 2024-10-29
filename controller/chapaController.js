@@ -20,7 +20,7 @@ module.exports = class chapaController{
     }
 
     //READ - LISTAR
-    static async ChapaListarid(req, res) {
+    static async ChapaListar(req, res) {
         const id_chapa = req.params.id;
         if (id_chapa) {
             const chapa = await Chapa.findOne({ where: { id_chapa: id_chapa } });
@@ -30,16 +30,6 @@ module.exports = class chapaController{
             res.json(chapas);
         }
     }
-    // Função para listar todas as chapas
-    static async ChapaListar(req, res) {
-        try {
-            const chapas = await Chapa.findAll({ raw: true });
-            res.json(chapas);
-        } catch (error) {
-            res.status(500).json({ message: "Erro ao listar as chapas", error: error.message });
-        }
-    }
-
 
     //UPDATE
     static async ChapaUpdate(req, res) {
