@@ -31,24 +31,32 @@ module.exports = class chapaController{
         }
     }
 
-    //UPDATE
+    
+
     static async ChapaUpdate(req, res) {
-        const id_chapa = req.params.id;
+        const id_chapa = req.params.id_chapa;
         let nome = req.body.nome;
         let link = req.body.link;
         let qualidade = req.body.qualidade;
         let preco = req.body.preco;
-
+    
         const chapa = {
             nome: nome,
             link: link,
             qualidade: qualidade,
             preco: preco
         };
-
-        await Chapa.update(chapa, { where: { id_chapa: id_chapa } });
-        res.json({ message: "Cadastro de chapa atualizado com sucesso! Foram atualizadas as seguintes informações: ", dados: chapa });
+    
+        try {
+            await Chapa.update(chapa, { where: { id_chapa: id_chapa } });
+            res.json({ message: "Cadastro de chapa atualizado com sucesso!", dados: chapa });
+        } catch (error) {
+            console.error("Erro ao atualizar chapa:", error);
+            res.status(500).json({ message: "Erro ao atualizar chapa!", error: error.message });
+        }
     }
+    
+    
 
     //DELETE
     static async ChapaDelete(req, res) {

@@ -34,6 +34,9 @@ router.post("/login", usuarioController.UsuarioVerificaLogin);
 //POST - CADASTRAR CHAPA
 router.post("/add_chapa", chapaController.ChapaCreate);
 
+router.put("/chapas/update/:id_chapa", chapaController.ChapaUpdate);
+
+
 //GET - LISTAR CHAPAS (com ID opcional)
 router.get("/chapas/:id?", chapaController.ChapaListar);
 //DELETE  - DELETAR CHAPAS 
