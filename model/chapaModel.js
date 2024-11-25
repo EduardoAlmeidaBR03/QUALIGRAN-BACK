@@ -23,6 +23,14 @@ const Chapa = database.define('chapa', {
     preco: {
         type: Sequelize.DECIMAL(10, 2), // Consider using DECIMAL for prices
         allowNull: false
+    },
+    largura: {
+        type: Sequelize.DECIMAL(10, 2), 
+        allowNull: false
+    },
+    altura: {
+        type: Sequelize.DECIMAL(10, 2), 
+        allowNull: false
     }
 }, {
     tableName: 'chapas' // Name of the table in the database

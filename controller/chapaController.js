@@ -7,12 +7,16 @@ module.exports = class chapaController{
         let link = req.body.link;
         let qualidade = req.body.qualidade;
         let preco = req.body.preco;
+        let largura = req.body.largura;
+        let altura = req.body.altura;
 
         const chapa = {
             nome: nome,
             link: link,
             qualidade: qualidade,
-            preco: preco
+            preco: preco,
+            largura: largura,
+            altura: altura
         }
 
         await Chapa.create(chapa);
@@ -39,12 +43,16 @@ module.exports = class chapaController{
         let link = req.body.link;
         let qualidade = req.body.qualidade;
         let preco = req.body.preco;
+        let largura = req.body.largura;
+        let altura = req.body.altura;
     
         const chapa = {
             nome: nome,
             link: link,
             qualidade: qualidade,
-            preco: preco
+            preco: preco,
+            largura: largura,
+            altura: altura
         };
     
         try {
